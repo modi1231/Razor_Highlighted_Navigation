@@ -1,0 +1,53 @@
+﻿@page
+@model Razor_Highlighted_Navigation.Pages.indexModel
+@{
+    ViewData["Title"] = "Razor_Highlighted_Navigation";
+}
+
+<style>
+    .Active {
+        background-color: red;
+    }
+</style>
+
+<h1>Razor_Highlighted_Navigation</h1>
+<form method="post">
+
+    @*Progressively, each layer has an option to be clicked and send back the unique ID - to the specific 'on get' variable.
+        The theory being if a module is clicked then only that is 'active' and no section or content.
+        If a section is clicked then the parent module, and the section, ids are sent back.
+        If a content section is clicked, it, and both set of parents, are flagged as clicked.
+
+        When the data is being displayed conditionally check if it is clicked or not and make the background red.
+        *@
+
+    @for (int i = 0; i < Model.foo.modules.Count; i++)
+    {
+        <a asp-page-handler="index" 
+           asp-route-M_ID="@Model.foo.modules[i].ID"
+           class="@(Model.foo.modules[i].isCurrent == true ? "Active" : "")">
+            Module: @Model.foo.modules[i].ID
+        </a><br />
+
+        for (int s = 0; s < Model.foo.modules[i].sections.Count; s++)
+        {
+            <a asp-page-handler="index"
+               asp-route-M_ID="@Model.foo.modules[i].ID"
+               asp-route-S_ID="@Model.foo.modules[i].sections[s].ID"
+               class="@(Model.foo.modules[i].sections[s].isCurrent == true ? "Active" : "")">
+                ... Section: @Model.foo.modules[i].sections[s].ID
+            </a><br />
+
+            for (int c = 0; c < Model.foo.modules[i].sections[s].content.Count; c++)
+            {
+                <a asp-page-handler="index"
+                   asp-route-M_ID="@Model.foo.modules[i].ID"
+                   asp-route-S_ID="@Model.foo.modules[i].sections[s].ID"
+                   asp-route-C_ID="@Model.foo.modules[i].sections[s].content[c].ID"
+                   class="@(Model.foo.modules[i].sections[s].content[c].isCurrent == true ? "Active" : "")">
+                    ...... @Model.foo.modules[i].sections[s].content[c].Name @Model.foo.modules[i].sections[s].content[c].ID
+                </a><br />
+            }
+        }
+    }
+</form>

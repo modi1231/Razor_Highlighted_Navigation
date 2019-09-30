@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.28803.202
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Razor_Highlighted_Navigation", "Razor_Highlighted_Navigation\Razor_Highlighted_Navigation.csproj", "{0A978E91-F398-432E-AFF2-393D0952206F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0A978E91-F398-432E-AFF2-393D0952206F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0A978E91-F398-432E-AFF2-393D0952206F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0A978E91-F398-432E-AFF2-393D0952206F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0A978E91-F398-432E-AFF2-393D0952206F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {4C3CF109-AF96-4C8E-A7AB-339BEC459B13}
+	EndGlobalSection
+EndGlobal
